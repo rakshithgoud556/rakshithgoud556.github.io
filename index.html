@@ -1,0 +1,81 @@
+<!--
+README: Portfolio Website Template (single-file)
+
+How to use:
+1. Save this file as index.html.
+2. Create a GitHub repository named: yourusername.github.io (replace 'yourusername' with your GitHub username).
+3. Upload index.html to the root of the repository.
+4. (Optional) Create an 'assets' folder for images and a resume.pdf file.
+5. Commit changes — your site will be live at https://yourusername.github.io.
+
+Customize:
+- Replace [Your Name], bio, email, LinkedIn, and project details.
+- Update the 'avatar' initials.
+- Change the accent color in the CSS :root variables.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>[Your Name] — Portfolio</title>
+<style>
+  :root{
+    --bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#7c3aed;--max-w:1100px;--radius:14px;--ff:system-ui,-apple-system,'Segoe UI',Roboto;
+  }
+  body{margin:0;font-family:var(--ff);background:var(--bg);color:#e6eef6;display:flex;justify-content:center;padding:36px 18px;}
+  .wrap{width:100%;max-width:var(--max-w)}
+  header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+  .avatar{width:56px;height:56px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+  nav a{color:var(--muted);text-decoration:none;padding:8px 12px}
+  nav a:hover{color:var(--accent)}
+  main{display:grid;grid-template-columns:1fr 420px;gap:28px}
+  .hero{padding:20px;background:#111827;border-radius:var(--radius)}
+  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+  .card{background:var(--card);border-radius:12px;padding:14px}
+  .thumb{height:120px;border-radius:8px;background:#1f2937;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+  .chip{font-size:12px;padding:6px 8px;border-radius:999px;background:#1f2937;color:var(--muted)}
+  .sidebar{padding:18px;background:#111827;border-radius:var(--radius)}
+  footer{text-align:center;font-size:13px;color:var(--muted);margin-top:28px}
+  @media(max-width:980px){main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="avatar">YN</div>
+  <nav>
+    <a href="#projects">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+<main>
+<section>
+  <div class="hero">
+    <h2>Hi — I'm [Your Name]</h2>
+    <p>Short intro about your skills and focus.</p>
+    <div id="projects" class="projects">
+      <article class="card">
+        <div class="thumb">Project image</div>
+        <h3>Project Title</h3>
+        <p>Description of what you built and why.</p>
+        <div><span class="chip">Tech</span></div>
+      </article>
+    </div>
+  </div>
+  <footer>© <span id="year"></span> [Your Name] — Hosted on GitHub Pages</footer>
+</section>
+<aside class="sidebar" id="about">
+  <h3>About</h3>
+  <p>Brief background and what problems you solve.</p>
+  <h3>Skills</h3>
+  <div><span class="chip">HTML</span> <span class="chip">CSS</span></div>
+  <h3 id="contact">Contact</h3>
+  <p>Email: <a href="mailto:your@email.com" style="color:var(--accent)">your@email.com</a></p>
+</aside>
+</main>
+</div>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
